@@ -26,6 +26,7 @@ export const Nav = styled.nav`
     flex: 1;
     height: 100%;   
     a{
+        color: var(--white);
         display: flex;
         align-items: center;
         padding: 0 20px 0 20px;
