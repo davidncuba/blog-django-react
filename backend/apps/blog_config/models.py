@@ -42,3 +42,39 @@ class Category(MPTTModel):
 
     def __str__(self):
         return self.name
+
+
+class BlogData(models.Model):
+    name = models.CharField(_("name"), max_length=50)
+    logo = models.ImageField(
+        verbose_name=("image"),
+        help_text=_("Upload a product image"),
+        upload_to="images/logo",
+        default="images/logo/default.png",
+        null=True,
+        blank=True,
+    )
+    alt_text = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name=_("Alturnative text"),
+        help_text=_("Please add alturnative text"),
+    )
+    title = models.CharField(
+        max_length=255,
+        null=True,
+        blank=True,
+        verbose_name=_("Title Site"),
+        help_text=_("If you want you can insert a site title"),
+    )
+
+    class Meta:
+        verbose_name = _("BlogData")
+        verbose_name_plural = _("BlogDatas")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("BlogData_detail", kwargs={"pk": self.pk})

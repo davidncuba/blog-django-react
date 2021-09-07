@@ -7,16 +7,24 @@ export const Container = styled.header`
   width: 100%;
   font-size: 18px;
   font-weight: 300;
+  top: 0;
 `;
+
+
 export const Content = styled.div`
-  max-width: 1020px;
+  max-width: 1220px;
   margin: 0 auto;
   display: flex;
   height: 60px;
   align-items: center;
 `;
 export const Logo = styled.h1`
-  width: calc(100% / 6);
+  width: calc(100% / 5);
+
+  img {
+    max-width: 40px;
+    padding: 5px;
+  }
 `;
 
 export const Nav = styled.nav`
