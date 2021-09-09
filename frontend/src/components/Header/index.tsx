@@ -21,11 +21,10 @@ interface NewMenu {
 interface NewBlogData {
   logo?: string;
   alt?: string;
-  nameBlog?: string
-
+  nameBlog?: string;
 }
 
-export function Header(dataBlog:NewBlogData) {
+export function Header(dataBlog: NewBlogData) {
   const [menus, setMenus] = useState<NewMenu[]>([]);
   const getNav = async () => {
     try {
@@ -33,7 +32,6 @@ export function Header(dataBlog:NewBlogData) {
       setMenus(data);
     } catch (error) {}
   };
-  
 
   useEffect(() => {
     getNav();
@@ -43,13 +41,19 @@ export function Header(dataBlog:NewBlogData) {
     <Container>
       <Content>
         <Logo>
-          {dataBlog.logo !== undefined ? <img src={dataBlog.logo} alt={dataBlog.alt} /> : ""}
-          {dataBlog.nameBlog !== undefined ? dataBlog.nameBlog : ""}
+          <Link to="/">
+            {dataBlog.logo !== undefined ? (
+              <img src={dataBlog.logo} alt={dataBlog.alt} />
+            ) : (
+              ""
+            )}
+            {dataBlog.nameBlog !== undefined ? dataBlog.nameBlog : ""}
+          </Link>
         </Logo>
         <Nav id="nav">
           {menus.map((menu) => (
             <span className="dropdown" key={menu.id}>
-              <Link to={menu.slug} key={menu.id}>
+              <Link to={"/" + menu.slug} key={menu.id}>
                 {menu.name}
               </Link>
 

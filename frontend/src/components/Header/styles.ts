@@ -8,6 +8,12 @@ export const Container = styled.header`
   font-size: 18px;
   font-weight: 300;
   top: 0;
+  a{
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: var(--white);
+  }
 `;
 
 
@@ -69,11 +75,7 @@ export const Nav = styled.nav`
 
   .dropdown-content a {
     float: none;
-    color: var(--white);
     padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
     height: 100%;
   }
 

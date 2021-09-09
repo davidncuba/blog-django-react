@@ -5,9 +5,10 @@ import Posts from "../pages/Posts";
 export default function Routers() {
   return (
     <Switch>
-      <Route path="/:slug">
+      <Route path="/post/:slug">
         <Posts />
       </Route>
+      <Route path="/404"></Route>
     </Switch>
   );
 }

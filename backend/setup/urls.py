@@ -9,6 +9,7 @@ urlpatterns = [
     path(
         "", include(("apps.blog_config.urls", "blog_config"), namespace="blog_config")
     ),
+    path("post/", include(("apps.posts.urls", "posts"), namespace="posts")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

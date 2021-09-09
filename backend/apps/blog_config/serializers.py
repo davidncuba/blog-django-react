@@ -19,4 +19,4 @@ class CategorySerializer(serializers.ModelSerializer):
 class BlogDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = BlogData
-        fields = ['name','logo','title', 'alt_text']
+        fields = ["name", "logo", "title", "alt_text"]
