@@ -59,7 +59,10 @@ export function Header(dataBlog: NewBlogData) {
               {menu.subcategory.length > 0 ? (
                 <span className="dropdown-content" id="dropdown-content">
                   {menu.subcategory.map((subcategory) => (
-                    <Link to={subcategory.slug} key={subcategory.id}>
+                    <Link
+                      to={"/category/" + subcategory.slug}
+                      key={subcategory.id}
+                    >
                       {subcategory.name}
                     </Link>
                   ))}
