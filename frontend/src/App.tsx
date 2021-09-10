@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import Routers from "./routers";
 import { TitleComponent } from "./components/Title";
 import { api } from "./components/Api";
-import Posts from "./pages/Posts";
+import AboutMe from "./components/AboutMe";
 
 interface NewBlogData {
   logo: string;
@@ -12,6 +12,7 @@ interface NewBlogData {
   name: string;
   title: string;
 }
+
 function App() {
   const [blogData, setBlogData] = useState<NewBlogData[]>([]);
   const getSystemData = async () => {
@@ -33,6 +34,8 @@ function App() {
         alt={blogData.length !== 0 ? blogData[0].alt : ""}
         nameBlog={blogData.length !== 0 ? blogData[0].name : ""}
       />
+
+      <AboutMe />
       <Routers />
     </BrowserRouter>
   );

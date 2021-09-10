@@ -1,5 +1,4 @@
-import { Container, Content, DivSearch, Logo, Nav } from "./styles";
-import { BsSearch } from "react-icons/bs";
+import { Container, Content, Logo, Nav } from "./styles";
 import { useState, useEffect } from "react";
 import { api } from "../Api";
 import { Link } from "react-router-dom";
@@ -53,7 +52,7 @@ export function Header(dataBlog: NewBlogData) {
         <Nav id="nav">
           {menus.map((menu) => (
             <span className="dropdown" key={menu.id}>
-              <Link to={"/" + menu.slug} key={menu.id}>
+              <Link to={"/category/" + menu.slug} key={menu.id}>
                 {menu.name}
               </Link>
 
@@ -71,10 +70,6 @@ export function Header(dataBlog: NewBlogData) {
             </span>
           ))}
         </Nav>
-        <DivSearch>
-          <input type="text" placeholder="Search"></input>
-          <BsSearch className="bs-search" />
-        </DivSearch>
       </Content>
     </Container>
   );

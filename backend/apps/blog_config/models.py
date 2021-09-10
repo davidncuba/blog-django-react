@@ -78,3 +78,24 @@ class BlogData(models.Model):
 
     def get_absolute_url(self):
         return reverse("BlogData_detail", kwargs={"pk": self.pk})
+
+
+class AboutMe(models.Model):
+    name = models.CharField(max_length=255)
+    img_perfil = models.ImageField(null=True, blank=True)
+    about = models.TextField()
+    facebook_url = models.CharField(max_length=255, null=True, blank=True)
+    twitter_url = models.CharField(max_length=255, null=True, blank=True)
+    instagram_url = models.CharField(max_length=255, null=True, blank=True)
+    youtube_url = models.CharField(max_length=255, null=True, blank=True)
+    github_url = models.CharField(max_length=255, null=True, blank=True)
+    linkedin_url = models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta:
+        verbose_name = _("AboutMe")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("AboutMe_detail", kwargs={"pk": self.pk})

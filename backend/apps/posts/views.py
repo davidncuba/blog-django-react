@@ -9,4 +9,10 @@ from .serializers import PostSerializer
 class PostList(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filterset_fields = ["slug"]
+    filterset_fields = ["slug", "category__slug"]
+
+
+class PostListUpdate(generics.RetrieveUpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    filterset_fields = ["slug", "category__slug"]

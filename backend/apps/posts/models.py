@@ -12,6 +12,7 @@ class Post(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     views = models.IntegerField(default=0)
     read_time = models.IntegerField(default=0)
+    picture = models.ImageField(blank=True, null=True)
 
     class Meta:
         verbose_name = _("Post")

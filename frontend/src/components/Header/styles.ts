@@ -8,14 +8,14 @@ export const Container = styled.header`
   font-size: 18px;
   font-weight: 300;
   top: 0;
-  a{
+  z-index: 1;
+  a {
     text-decoration: none;
     display: block;
     text-align: left;
     color: var(--white);
   }
 `;
-
 
 export const Content = styled.div`
   max-width: 1220px;
@@ -43,12 +43,13 @@ export const Nav = styled.nav`
     align-items: center;
     padding: 0 20px 0 20px;
     text-decoration: none;
+    transition: color 0.3s;
     &:hover {
       color: var(--green-600);
     }
   }
   .dropdown {
-    overflow: hidden;  
+    overflow: hidden;
     margin: auto;
   }
 
@@ -60,7 +61,6 @@ export const Nav = styled.nav`
     padding: 14px 16px;
     background: var(--dark-900);
     font-family: inherit;
-    
   }
 
   .dropdown-content {
@@ -70,7 +70,6 @@ export const Nav = styled.nav`
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    
   }
 
   .dropdown-content a {
@@ -85,28 +84,5 @@ export const Nav = styled.nav`
 
   .dropdown:hover .dropdown-content {
     display: block;
-  } 
-`;
-
-export const DivSearch = styled.div`
-  position: relative;
-  display: flex;
-
-  input {
-    padding: 0.2rem 0 0.2rem 1.5rem;
-    border: 0;
-    background: transparent;
-    font-size: 18px;
-    color: var(--white);
-  }
-  input:focus {
-    outline: 0;
-    background: var(--dark-700);
-    border-radius: 0.25rem;
-  }
-  .bs-search {
-    position: absolute;
-    padding: 0.1875rem 0 0 0.2rem;
-    top: 0.1875rem;
   }
 `;

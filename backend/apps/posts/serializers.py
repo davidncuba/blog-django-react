@@ -15,6 +15,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = (
+            "id",
             "title",
             "content",
             "category",
@@ -22,4 +23,5 @@ class PostSerializer(serializers.ModelSerializer):
             "create_at",
             "views",
             "read_time",
+            "picture",
         )
