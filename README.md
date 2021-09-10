@@ -3,6 +3,7 @@
 
 <h1 align="center">
   <br>
+   <img src="https://github.com/davidncuba/blog-django-react/blob/8f11b082d36160f04ae3c6f2e57c66b274c110ad/blog.png" alt="Blog" width="800"></a>
   <br>
 Blog Django React  
   <br>
